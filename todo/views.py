@@ -13,12 +13,9 @@ from django.contrib.auth.models import User
 from todo.models import UserProfile
 
 def index(request):
+    # If not logged in, then go to register page
 	if not request.user.is_authenticated():
 		return register(request)
-        #pass
-		## Will do something
-
-	#form = RegistrationForm()
 
 	return render_to_response("home.html", {
 			#"form": form,
