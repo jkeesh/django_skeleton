@@ -7,6 +7,8 @@ urlpatterns = patterns('',
 
 	(r'^$', 'todo.views.index'),
 	(r'^register$', 'todo.views.register'),
+	(r'^login/?$', "todo.views.login"),
+    (r'^logout/?$', "todo.views.logout"),
 
 
     # Example:

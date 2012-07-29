@@ -48,7 +48,11 @@ def register(request):
 
             return authenticate(request, email, password)
     
-    return redirect('/')
+    return render_to_response("login.html", {
+            'form': form,
+        },
+        context_instance = RequestContext(request)
+    )
 
 def authenticate(request, email, password):
     user = auth.authenticate(username=email, password=password)
@@ -83,4 +87,4 @@ def logout(request):
 def login(request):
     if request.method == "POST":
         return authenticate(request, request.POST['email'], request.POST['password'])
-    return redirect('/register?login')
+    return redirect('/')
