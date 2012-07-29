@@ -13,14 +13,15 @@ from django.contrib.auth.models import User
 from todo.models import UserProfile
 
 def index(request):
-	if request.user.is_authenticated():
-		pass
+	if not request.user.is_authenticated():
+		return register(request)
+        #pass
 		## Will do something
 
-	form = RegistrationForm()
+	#form = RegistrationForm()
 
-	return render_to_response("login.html", {
-			"form": form,
+	return render_to_response("home.html", {
+			#"form": form,
         },
         context_instance = RequestContext(request)
     )
@@ -47,6 +48,8 @@ def register(request):
             #request.session['next'] = '/'
 
             return authenticate(request, email, password)
+    else:
+        form = RegistrationForm()
     
     return render_to_response("login.html", {
             'form': form,
