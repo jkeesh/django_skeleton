@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">Contacts</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+<!--                         <li>
+                            <a href="/editor">Code Editor</a>
+                        </li>
+
+ -->
+                    </ul>
+
+<!--                     <ul class="nav pull-right">
+                        {% if user.is_authenticated %}
+                        <li><a href="/user/{{user.id}}">{{ user.first_name }} {{ user.last_name }}</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        {% else %}
+                        <li><a href="/register?start">Sign Up!</a></li>
+                        <li><a href="/login">Login</a></li>
+                        {% endif %}
+                    </ul>
+ -->                </div>
+            </div>
+        </div>
+    </div>
+	
+	{% block content %}
+	{% endblock %}
+	
+</body>
+
+</html>
